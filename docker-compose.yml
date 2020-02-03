@@ -1,0 +1,12 @@
+version: "3.7"
+services:
+    postgresql:
+        image: postgres
+        environment: 
+            - POSTGRESS_PASSWORD=postgres
+            - POSTGRESS_USERNAME=postgres
+            - POSTGRES_DB=zelda_cookbook
+    backend:
+        build: ./zelda-cookbook-backend
+        depends_on: 
+            - postgresql
