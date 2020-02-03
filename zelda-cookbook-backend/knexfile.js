@@ -1,11 +1,12 @@
 // Update with your config settings.
-require('dotenv').config();
-var db = 'postgres://postgres:postgres@db:5432/zelda_cookbook';
+const dotenv = require('dotenv');
+dotenv.config();
+var db = process.env.URL;
 var dbclient = 'postgresql';
 module.exports = {
   development: {
-    client: dbclient,//'postgresql',
-    connection: db,//'postgres://postgres:postgres@db:5432/zelda_cookbook',
+    client: dbclient,
+    connection: db,
     migrations: {
       directory: './db/migrations'
     },
@@ -16,8 +17,8 @@ module.exports = {
   },
 
   test: {
-    client: dbclient,//'postgresql',
-    connection: db,//'postgres://postgres:postgres@db:5432/zelda_cookbook',
+    client: dbclient,
+    connection: db,
     migrations: {
       directory: './db/migrations'
     },
